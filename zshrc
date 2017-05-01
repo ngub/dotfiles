@@ -9,8 +9,8 @@ export ZSH=$DOTFILES/zsh
 
 # zsh plugins loaded via zgen
 if ! zgen saved; then
-    zgen oh-my-zsh
     zgen oh-my-zsh plugins/z
+    zgen oh-my-zsh plugins/git
     zgen load denysdovhan/spaceship-zsh-theme spaceship
 	source $ZSH/plugins.zsh
 	zgen save
@@ -39,6 +39,12 @@ bindkey -v
 export KEYTIMEOUT=1
 
 # User configuration
+
+
+# Plugins' options
+bindkey '^ ' autosuggest-accept
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=blue
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

@@ -39,6 +39,3 @@ for plugin in $plugins
 do
 	zgen load $plugin
 done
-
-# Plugins' options
-bindkey '^ ' autosuggest-accept
