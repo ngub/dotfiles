@@ -1,0 +1,14 @@
+- defaults:
+    link:
+        relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc:
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - ./scripts/install.zsh
+    - [./powerline-fonts/install.sh, Installing fonts]
+    - echo 'Done! Please restart shell'
