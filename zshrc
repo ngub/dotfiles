@@ -5,18 +5,19 @@
 export DOTFILES=$HOME/dotfiles
 
 source $DOTFILES/zgen/zgen.zsh
-export ZSH=$DOTFILES/zsh
+export CUSTOM_ZSH=$DOTFILES/zsh
 
 # zsh plugins loaded via zgen
 if ! zgen saved; then
+    zgen oh-my-zsh
     zgen oh-my-zsh plugins/z
     zgen oh-my-zsh plugins/git
     zgen load denysdovhan/spaceship-zsh-theme spaceship
-	source $ZSH/plugins.zsh
+	source $CUSTOM_ZSH/plugins.zsh
 	zgen save
 fi
 
-source $ZSH/themes.zsh
+source $CUSTOM_ZSH/themes.zsh
 
 # PATH settings
 if [[ -d $HOME/.linuxbrew ]]; then
