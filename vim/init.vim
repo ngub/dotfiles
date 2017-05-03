@@ -1,0 +1,1 @@
+/home/ngub/dotfiles/vimrc
