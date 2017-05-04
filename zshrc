@@ -12,6 +12,7 @@ if ! zgen saved; then
     zgen oh-my-zsh
     zgen oh-my-zsh plugins/z
     zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/debian
     zgen load denysdovhan/spaceship-zsh-theme spaceship
 	source $CUSTOM_ZSH/plugins.zsh
 	zgen save

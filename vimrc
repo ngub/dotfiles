@@ -12,16 +12,47 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Ale
-let g:ale_sign_error = '⨉'
-let g:ale_sign_warning = '⚠'
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '%s [%severity%]'
+" let g:ale_sign_error = '⨉'
+" let g:ale_sign_warning = '⚠'
+" let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+" let g:ale_echo_msg_error_str = 'E'
+" let g:ale_echo_msg_warning_str = 'W'
+" let g:ale_echo_msg_format = '%s [%severity%]'
+
+" Syntastic
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_cursor_column = 0
+let g:syntastic_error_symbol = "\u26D2"
+let g:syntastic_warning_symbol = "\u26A0"
+let g:syntastic_loc_list_height = 5
+let g:syntastic_filetype_map = {
+    \ "tsx": "ts" }
+
+highlight SyntasticErrorSign guifg=red
+highlight SyntasticWarningSign guifg=#c09c2b
+highlight SyntasticErrorLine guibg=#2f0000
+highlight SyntasticWarningLine guibg=#c09c2b
+highlight SyntasticError guibg=#2f0000
+highlight SyntasticWarning guibg=#c09c2b
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='wombat'
 
+" Typescript
+autocmd BufEnter *.tsx set filetype=typescript
 
 " vim
 set nocompatible

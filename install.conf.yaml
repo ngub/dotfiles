@@ -17,5 +17,4 @@
     - [git submodule update --init --recursive, Installing submodules]
     - ./scripts/install.zsh
     - [./powerline-fonts/install.sh, Installing fonts]
-    - [vim +PluginInstall +qall, Installing vim plugins]
     - [echo 'Done! Please restart shell']
