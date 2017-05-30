@@ -59,7 +59,6 @@ set nocompatible
 filetype off
 
 set colorcolumn=80
-set number
 set hidden
 set history=100
 
@@ -67,8 +66,6 @@ filetype indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set smartindent
-set autoindent
 
 set autoread                " detect when a file is changed
 
