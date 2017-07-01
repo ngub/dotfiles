@@ -1,1 +1,1 @@
-/home/ngub/dotfiles/vimrc
+/home/gorod/.vimrc

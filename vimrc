@@ -110,12 +110,13 @@ set nofoldenable            " don't fold by default
 set foldlevel=1
 
 " Searching
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+nnoremap <silent> <space> :nohlsearch<Bar>:echo<CR>
 set ignorecase              " case insensitive searching
 set smartcase               " case-sensitive if expresson contains a capital letter
 set hlsearch                " highlight search results
 set incsearch               " set incremental search, like modern browsers
 set nolazyredraw            " don't redraw while executing macros
+set path=**/*
 
 set magic                   " Set magic on, for regex
 
