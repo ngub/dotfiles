@@ -65,3 +65,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=blue
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Aliases
+alias vi=vim

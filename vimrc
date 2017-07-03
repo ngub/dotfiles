@@ -49,14 +49,24 @@ highlight SyntasticWarning guibg=#c09c2b
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='wombat'
+let g:airline_theme='bubblegum'
 
 " Typescript
 autocmd BufEnter *.tsx set filetype=typescript
 
+" JSX
+let g:jsx_ext_required = 0
+
+" CSS
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType scss set omnifunc=csscomplete#CompleteCSS
+autocmd BufNewFile,BufRead *.scss set ft=scss.css
+
 " vim
 set nocompatible
 filetype off
+
+colors BlackSea
 
 set colorcolumn=80
 set hidden
