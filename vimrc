@@ -46,6 +46,12 @@ highlight SyntasticWarningLine guibg=#c09c2b
 highlight SyntasticError guibg=#2f0000
 highlight SyntasticWarning guibg=#c09c2b
 
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-space>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-x>"
+
+
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
