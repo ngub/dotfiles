@@ -43,6 +43,8 @@ if [[ -d /usr/local/go ]]; then
     export PATH=$PATH:$GOPATH/bin
 fi
 
+export EDITOR=vim
+
 bindkey -v
 export KEYTIMEOUT=1
 
