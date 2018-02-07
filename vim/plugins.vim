@@ -40,3 +40,9 @@ Plugin 'mileszs/ack.vim'
 Plugin 'fatih/vim-go'
 Plugin 'styled-components/vim-styled-components'
 Plugin 'jparise/vim-graphql'
+Plugin 'ap/vim-css-color'
+Plugin 'tomlion/vim-solidity'
+Plugin 'pbrisbin/vim-mkdir'
+Plugin 'digitaltoad/vim-pug'
+
+

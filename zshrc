@@ -76,6 +76,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Aliases
 alias vi=vim
+alias geth=$HOME/geth/go-ethereum/build/bin/geth
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

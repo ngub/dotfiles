@@ -103,6 +103,7 @@ set showbreak=…             " show ellipsis at breaking
 
 set autoindent              " automatically set indent of new line
 set smartindent
+set autochdir               " set working directory to current
 
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
