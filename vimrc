@@ -12,39 +12,50 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Ale
-" let g:ale_sign_error = '⨉'
-" let g:ale_sign_warning = '⚠'
-" let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-" let g:ale_echo_msg_error_str = 'E'
-" let g:ale_echo_msg_warning_str = 'W'
-" let g:ale_echo_msg_format = '%s [%severity%]'
+let g:ale_sign_error = '⨉'
+let g:ale_sign_warning = '⚠'
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '%s [%severity%]'
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tslint']
+\}
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_change_sign_column_color = 1
+nnoremap <C-]> :ALEGoToDefinition <Enter>
 
 " Syntastic
-let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" let g:tsuquyomi_disable_quickfix = 1
+" let g:syntastic_typescript_checkers = ['tsuquyomi', 'tslint']
+" let g:syntastic_typescript_checkers = ['tscompletejob', 'tslint']
+" let g:tsuquyomi_use_vimproc=1
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_cursor_column = 0
-let g:syntastic_error_symbol = "\u26D2"
-let g:syntastic_warning_symbol = "\u26A0"
-let g:syntastic_loc_list_height = 5
-let g:syntastic_filetype_map = {
-    \ "tsx": "ts" }
 
-highlight SyntasticErrorSign guifg=red
-highlight SyntasticWarningSign guifg=#c09c2b
-highlight SyntasticErrorLine guibg=#2f0000
-highlight SyntasticWarningLine guibg=#c09c2b
-highlight SyntasticError guibg=#2f0000
-highlight SyntasticWarning guibg=#c09c2b
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_enable_signs = 1
+" let g:syntastic_aggregate_errors = 1
+" let g:syntastic_cursor_column = 0
+" let g:syntastic_error_symbol = "\u26D2"
+" let g:syntastic_warning_symbol = "\u26A0"
+" let g:syntastic_loc_list_height = 5
+" let g:syntastic_filetype_map = {
+"     \ "tsx": "ts" }
+
+" highlight SyntasticErrorSign guifg=red
+" highlight SyntasticWarningSign guifg=#c09c2b
+" highlight SyntasticErrorLine guibg=#2f0000
+" highlight SyntasticWarningLine guibg=#c09c2b
+" highlight SyntasticError guibg=#2f0000
+" highlight SyntasticWarning guibg=#c09c2b
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-space>"

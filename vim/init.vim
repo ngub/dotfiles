@@ -1,1 +1,1 @@
-/home/nikita/dotfiles/vimrc
+/home/ngub/dotfiles/vimrc
