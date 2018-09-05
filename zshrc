@@ -43,6 +43,12 @@ if [[ -d /usr/local/go ]]; then
     export PATH=$PATH:$GOPATH/bin
 fi
 
+if [[ -d $HOME/.env ]]; then
+    source $HOME/.env
+fi
+
+export PATH=$HOME/tizen-studio/tools/ide/bin:$PATH
+export PATH=$HOME/tizen-studio/tools:$PATH
 export EDITOR=vim
 
 bindkey -v
@@ -75,11 +81,18 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=blue
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Aliases
+alias reload="source ~/.zshrc"
 alias vi=vim
+if [[ -x "$(command -v mvim)" ]]; then
+    alias vi="mvim -v"
+fi
+if [[ -x "$(command -v nvim)" ]]; then
+    alias vi="nvim"
+fi
 alias geth=$HOME/geth/go-ethereum/build/bin/geth
+alias zshrc="$EDITOR ~/.zshrc"
+alias vimrc="$EDITOR ~/.vimrc"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -23,9 +23,10 @@ let g:ale_fixers = {
 \   'typescript': ['tslint']
 \}
 let g:ale_fix_on_save = 1
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 let g:ale_change_sign_column_color = 1
-nnoremap <C-]> :ALEGoToDefinition <Enter>
+set completeopt=menu,menuone,preview,noselect,noinsert
+nnoremap <silent> <C-]> :ALEGoToDefinition <Enter>
 
 " Syntastic
 " let g:tsuquyomi_disable_quickfix = 1
@@ -83,9 +84,11 @@ autocmd BufNewFile,BufRead *.scss set ft=scss.css
 set nocompatible
 filetype off
 
+set clipboard=unnamedplus
+
 colors BlackSea
 
-set colorcolumn=80
+set colorcolumn=120
 set hidden
 set history=100
 
@@ -97,13 +100,13 @@ set expandtab
 set autoread                " detect when a file is changed
 
 set history=1000            " change history to 1000
-set textwidth=80
+set textwidth=120
 
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+" let g:python_host_prog = '/usr/bin/python'
+" let g:python3_host_prog = '/usr/local/bin/python3'
 
 set number                  " show line numbers
 set relativenumber          " show relative line numbers
@@ -114,22 +117,13 @@ set showbreak=…             " show ellipsis at breaking
 
 set autoindent              " automatically set indent of new line
 set smartindent
-set autochdir               " set working directory to current
+" set autochdir               " set working directory to current
 
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
 
 " Remove trailing whitespaces on space
 autocmd BufWritePre * :%s/\s\+$//e
-
-" Reload .vimrc
-map <leader>s :source ~/.vimrc<CR>
-
-" Better splits
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " code folding settings
 set foldmethod=syntax       " fold based on indent
@@ -150,3 +144,29 @@ set magic                   " Set magic on, for regex
 
 set showmatch               " show matching braces
 set mat=2                   " how many tenths of a second to blink
+hi Search cterm=bold ctermfg=0 ctermbg=9
+
+" Key mappings
+" Buffers
+map <leader>ls :ls<CR>
+map <leader>q :bw<CR>
+map <leader>w :w<CR>
+
+" Reload .vimrc
+map <leader>r :source ~/.vimrc<CR>
+
+" Better splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Ack search
+map <silent><leader>s :Ack!<CR>
+
+" Fugitive
+map <silent><leader>gs :Gstatus<CR>
+map <silent><leader>gd :Gdiff<CR>
+map <silent><leader>gc :Gcommit<CR>
+map <silent><leader>ga :Gwrite<CR>
+map <silent><leader>gco :Gread<CR>
