@@ -13,6 +13,7 @@ plugins=(
     sharat87/zsh-vim-mode
 
 # Completion
+    zsh-users/zsh-history-substring-search
 	zsh-users/zsh-autosuggestions
 	knu/zsh-manydots-magic
 	oknowton/zsh-dwim
