@@ -15,6 +15,8 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " Ale
+nmap <silent> <C-N> <Plug>(ale_previous_wrap)
+nmap <silent> <C-n> <Plug>(ale_next_wrap)
 let g:ale_sign_error = '⨉'
 let g:ale_sign_warning = '⚠'
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
@@ -132,6 +134,7 @@ set nofoldenable            " don't fold by default
 set foldlevel=1
 
 " Searching
+syntax on
 nnoremap <silent> <space> :nohlsearch<Bar>:echo<CR>
 set ignorecase              " case insensitive searching
 set smartcase               " case-sensitive if expresson contains a capital letter
@@ -144,7 +147,7 @@ set magic                   " Set magic on, for regex
 
 set showmatch               " show matching braces
 set mat=2                   " how many tenths of a second to blink
-hi Search cterm=bold ctermfg=0 ctermbg=9
+hi Search cterm=bold ctermfg=White ctermbg=DarkGray
 
 " Key mappings
 " Buffers
