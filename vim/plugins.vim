@@ -6,6 +6,7 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-jdaddy.git'
 Plugin 'ervandew/supertab'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'yggdroot/indentline'
@@ -32,6 +33,7 @@ Plugin 'pbrisbin/vim-mkdir'
 Plugin 'majutsushi/tagbar'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'junegunn/vim-easy-align'
 
 " JavaScript
 Plugin 'othree/javascript-libraries-syntax.vim'
@@ -46,7 +48,6 @@ Plugin 'jparise/vim-graphql'
 Plugin 'posva/vim-vue'
 
 " Typescript
-Plugin 'ianks/vim-tsx'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 

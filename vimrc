@@ -5,6 +5,9 @@ Plugin 'VundleVim/Vundle.vim'
 source ~/.vim/plugins.vim
 call vundle#end()
 
+" Typescript
+autocmd BufEnter *.tsx set filetype=typescript
+
 " Plugins' options
 " CtrlP
 let g:ctrlp_map = '<c-p>'
@@ -69,9 +72,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='bubblegum'
 
-" Typescript
-autocmd BufEnter *.tsx set filetype=typescript
-
 " JSX
 let g:jsx_ext_required = 0
 
@@ -117,7 +117,7 @@ set showbreak=…             " show ellipsis at breaking
 
 set autoindent              " automatically set indent of new line
 set smartindent
-" set autochdir               " set working directory to current
+set autochdir               " set working directory to current
 
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
@@ -170,3 +170,7 @@ map <silent><leader>gd :Gdiff<CR>
 map <silent><leader>gc :Gcommit<CR>
 map <silent><leader>ga :Gwrite<CR>
 map <silent><leader>gco :Gread<CR>
+
+" EasyAlign
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)

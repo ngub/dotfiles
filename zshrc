@@ -37,19 +37,25 @@ if [[ -d $HOME/bin ]]; then
 	export PATH=$HOME/bin:$PATH
 fi
 
+if [[ -d $HOME/Library/Python/3.7/lib/python/site-packages ]]; then
+    export PATH=$HOME/Library/Python/3.7/lib/python/site-packages:$PATH
+fi
+
 if [[ -d /usr/local/go ]]; then
     export PATH=$PATH:/usr/local/go/bin
     export GOPATH=$HOME/go
     export PATH=$PATH:$GOPATH/bin
 fi
 
-if [[ -d $HOME/.env ]]; then
+if [[ -f $HOME/.env ]]; then
     source $HOME/.env
 fi
 
 export PATH=$HOME/tizen-studio/tools/ide/bin:$PATH
 export PATH=$HOME/tizen-studio/tools:$PATH
-export EDITOR=vim
+export PATH=/opt/webOS_TV_SDK/CLI/bin:$PATH
+
+export EDITOR=vi
 
 bindkey -v
 export KEYTIMEOUT=1
@@ -96,3 +102,5 @@ alias vimrc="$EDITOR ~/.vimrc"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source /Users/cetus/.yql/shell_completion
