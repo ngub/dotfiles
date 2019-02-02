@@ -6,7 +6,7 @@ source ~/.vim/plugins.vim
 call vundle#end()
 
 " Typescript
-autocmd BufEnter *.tsx set filetype=typescript
+" autocmd BufEnter *.tsx set filetype=typescript
 
 " Plugins' options
 " CtrlP
@@ -29,7 +29,7 @@ let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 0
 let g:ale_change_sign_column_color = 1
 set completeopt=menu,menuone,preview,noselect,noinsert
-nnoremap <silent> <C-]> :ALEGoToDefinition <Enter>
+" nnoremap <silent> <C-]> :ALEGoToDefinition <Enter>
 
 " Syntastic
 " let g:tsuquyomi_disable_quickfix = 1

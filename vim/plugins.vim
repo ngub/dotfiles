@@ -18,7 +18,7 @@ Plugin 'sirver/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'mattn/emmet-vim'
 Plugin 'valloric/youcompleteme'
-Plugin 'shougo/vimproc.vim'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'raimondi/delimitmate'
@@ -48,6 +48,7 @@ Plugin 'jparise/vim-graphql'
 Plugin 'posva/vim-vue'
 
 " Typescript
+Plugin 'Quramy/tsuquyomi'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'peitalin/vim-jsx-typescript'
 
