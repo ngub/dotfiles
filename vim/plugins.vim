@@ -7,6 +7,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-jdaddy.git'
+Plugin 'tpope/vim-obsession'
 Plugin 'ervandew/supertab'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'yggdroot/indentline'
@@ -56,4 +57,6 @@ Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'hail2u/vim-css3-syntax'
 
+" Python
+Plugin 'klen/python-mode'
 
