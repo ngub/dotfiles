@@ -24,14 +24,46 @@ let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '%s [%severity%]'
 let g:ale_fixers = {
-\   'javascript': ['eslint'],
-\   'typescript': ['tslint']
+\   'javascript': ['eslint', 'prettier'],
+\   'typescript': ['eslint', 'prettier'],
+\   'css': ['stylelint', 'prettier']
 \}
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 0
 let g:ale_change_sign_column_color = 1
 set completeopt=menu,menuone,preview,noselect,noinsert
 " nnoremap <silent> <C-]> :ALEGoToDefinition <Enter>
+hi ALEErrorSignLineNr guifg=#bf616a guibg=#52050c gui=bold
+hi ALEStyleErrorSignLineNr guifg=#bf616a guibg=#52050c gui=bold
+hi ALEWarningSignLineNr guifg=#ebcb8b guibg=#432d00 gui=bold
+hi ALEStyleWarningSignLineNr guifg=#ebcb8b guibg=#432d00 gui=bold
+hi ALEInfoSignLineNr guifg=#a3be8c guibg=#163601 gui=bold
+
+
+" CoC
+set hidden
+set nobackup
+set nowritebackup
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+nmap <silent> <leader>d <Plug>(coc-definition)
+nmap <silent> <leader>t <Plug>(coc-type-definition)
+noremap <silent> <leader>k :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+nmap <leader>rn <Plug>(coc-rename)
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+inoremap <expr> <leader>c pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
 
 " Syntastic
 " let g:tsuquyomi_disable_quickfix = 1
@@ -88,7 +120,8 @@ filetype off
 
 set clipboard=unnamedplus
 
-colors BlackSea
+colors Atelier_SulphurpoolDark
+
 
 set colorcolumn=120
 set hidden
@@ -100,6 +133,14 @@ set shiftwidth=4
 set expandtab
 
 set autoread                " detect when a file is changed
+" Triger `autoread` when files changes on disk
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+" Notification after file change
+" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 set history=1000            " change history to 1000
 set textwidth=120
